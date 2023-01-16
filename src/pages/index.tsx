@@ -33,8 +33,6 @@ const Home: NextPage = () => {
     },
   });
 
-  console.log(borrowedData);
-
   return (
     <>
       <Head>
