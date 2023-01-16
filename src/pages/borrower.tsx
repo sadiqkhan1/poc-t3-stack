@@ -73,7 +73,7 @@ const Borrower: NextPage = () => {
             </thead>
 
             {borrower.map(({ id, name, email, contactNumber }) => (
-              <tbody>
+              <tbody key={id + name + email}>
                 <tr
                   key={id}
                   className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"

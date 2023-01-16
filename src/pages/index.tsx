@@ -60,8 +60,8 @@ const Home: NextPage = () => {
             </div>
             <div className="flex h-screen justify-center text-center">
               <p className="text-center text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-xl">
-                "Here at Fuxam we focus on lenting books to the students for
-                certain period of time."
+                Here at Fuxam we focus on lenting books to the students for
+                certain period of time.
               </p>
             </div>
           </div>
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
                 },
                 idx
               ) => (
-                <tbody>
+                <tbody key={idx + bookName + borrowerName}>
                   <tr
                     key={idx}
                     className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
