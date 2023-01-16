@@ -23,27 +23,6 @@ const Borrower: NextPage = () => {
     setOpenLendBookModal(true);
   };
 
-  // const { mutate: deleteItem } = trpc.useMutation(["items.deleteItem"], {
-  //   onSuccess(shoppingItem) {
-  //     setItems((prev) => prev.filter((item) => item.id !== shoppingItem.id));
-  //   },
-  // });
-
-  // const { mutate: toggleChecked } = trpc.useMutation(["items.toggleChecked"], {
-  //   onSuccess(shoppingItem) {
-  //     // check if this item is already checked
-  //     if (checkedItems.some((item) => item.id === shoppingItem.id)) {
-  //       // remove it from the checked items
-  //       setCheckedItems((prev) =>
-  //         prev.filter((item) => item.id !== shoppingItem.id)
-  //       );
-  //     } else {
-  //       // add it to the checked items
-  //       setCheckedItems((prev) => [...prev, shoppingItem]);
-  //     }
-  //   },
-  // });
-
   return borrower.length ? (
     <>
       <Head>
@@ -99,10 +78,16 @@ const Borrower: NextPage = () => {
                   key={id}
                   className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
                 >
-                  <td className="px-6 py-4">{name}</td>
-                  <td className="px-6 py-4">{email}</td>
-                  <td className="px-6 py-4">{contactNumber}</td>
-                  <td className="px-6 py-4">
+                  <td key={name + id} className="px-6 py-4">
+                    {name}
+                  </td>
+                  <td key={email + id} className="px-6 py-4">
+                    {email}
+                  </td>
+                  <td key={contactNumber + id} className="px-6 py-4">
+                    {contactNumber}
+                  </td>
+                  <td key={id} className="px-6 py-4">
                     <button
                       className="mr-2 mb-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       onClick={() => openBorrowModal(id)}

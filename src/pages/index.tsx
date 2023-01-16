@@ -77,8 +77,8 @@ const Home: NextPage = () => {
           }}
           className="space-y-6"
         >
-          {pageOptions.map((pageOption) => (
-            <Selection {...pageOption} />
+          {pageOptions.map((pageOption, idx) => (
+            <Selection {...pageOption} key={idx} />
           ))}
         </div>
         <div className="relative mb-10 flex justify-center overflow-x-auto">
@@ -114,9 +114,13 @@ const Home: NextPage = () => {
                     key={idx}
                     className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
                   >
-                    <td className="px-6 py-4">{bookName}</td>
-                    <td className="px-6 py-4">{borrowerName}</td>
-                    <td className="px-6 py-4">
+                    <td key={bookName + idx} className="px-6 py-4">
+                      {bookName}
+                    </td>
+                    <td key={borrowerName + idx} className="px-6 py-4">
+                      {borrowerName}
+                    </td>
+                    <td key={idx} className="px-6 py-4">
                       {borrowedFrom.toLocaleDateString("en-US")}
                     </td>
                     <td className="px-6 py-4">
